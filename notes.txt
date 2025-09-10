@@ -1,0 +1,48 @@
+# Install Git (Ubuntu/Debian)
+sudo apt update && sudo apt install git -y
+
+# Configure identity (must match your GitHub account)
+git config --global user.name "your-username"
+git config --global user.email "your-email@example.com"
+
+# Store credentials so PAT won’t be asked each time
+git config --global credential.helper store
+
+# Create project folder
+mkdir CONNECTIONS && cd CONNECTIONS
+
+# Initialize Git repo
+git init
+
+# Add GitHub remote (HTTPS example)
+git remote add origin https://github.com/kuuunaal/CONNECTIONS.git
+
+# Create a file
+echo "# CONNECTIONS" > README.md
+
+# Stage file(s)
+git add README.md
+
+# Commit changes
+git commit -m "first commit"
+
+# Set branch to main
+git branch -M main
+
+# Push to GitHub (use PAT as password)
+git push origin main
+
+# See repo status
+git status
+
+# Add all new/changed files
+git add .
+
+# Commit with message
+git commit -m "meaningful message"
+
+# See commit history
+git log --oneline
+
+# Push changes to GitHub
+git push origin main
